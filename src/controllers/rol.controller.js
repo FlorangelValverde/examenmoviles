@@ -14,7 +14,6 @@ rolCtr.readRol = async(req, res) => {
     }
 }
 
-
 /////// create
 rolCtr.createRol = async(req, res) => {
     try {

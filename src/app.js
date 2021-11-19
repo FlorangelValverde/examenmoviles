@@ -4,6 +4,9 @@ const morgan = require('morgan')
 const alumnoRoutes = require('./routes/alumno.routes')
 const postRoutes = require('./routes/post.routes')
 const rolRoutes = require('./routes/rol.routes')
+const usuariosRoutes = require('./routes/usuarios.routes')
+const usuarioRolRoutes = require('./routes/usuariosrol.routes')
+const authRoutes = require ('./routes/auth.routes')
 
 const app = express();
 var cors = require('cors');
@@ -17,8 +20,10 @@ app.get('/', function(req, res, next) {
     res.send('SERVIDOR CORRIENDO CORRECTAMENTE');
 });
 
-app.use('/alumno', alumnoRoutes);
 app.use('/post', postRoutes);
 app.use('/rol', rolRoutes);
+app.use('/usuarios', usuariosRoutes); 
+app.use('/usuarios-rol', usuarioRolRoutes);
+app.use('/auth', authRoutes);
 
 module.exports = app;
